@@ -1,1 +1,49 @@
-//
+.logodj{
+    width: 20%;
+}
+
+.logobg{
+    width: 35%;
+}
+
+.paquetes{
+    height: 70vh;
+    width: 100%;
+    background-size: cover !important;
+    background-position: top;
+    position: relative;
+   
+    &__title{
+        width: 100%;
+        background-color: black;
+        padding: 5px;
+    }
+    &__content{
+        margin-top: 20%;
+        width: 100%;
+        background-color: white;
+        padding: 10px;
+        opacity: 0.8;
+    }
+}
+
+hr.new1 {
+  border: 1px solid #535156;
+}
+
+.body-height{
+    min-height: 45vh;
+}
+
+.card-relative{
+    position: relative;
+}
+
+.card-footer2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 5px;
+}
