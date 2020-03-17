@@ -30,11 +30,7 @@
     <link rel="stylesheet" href="{{ asset('vendor_assets/admin_lte/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor_assets/admin_lte/plugins/datatables-fixedheader/css/fixedHeader.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor_assets/admin_lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-
-
-
-
-
+    <link rel="stylesheet" href="{{ asset('vendor_assets/bootstrap_datepicker/bootstrap-datepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('css')
 </head>
@@ -50,79 +46,32 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">SITIO</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
+
             </ul>
 
-            <!-- SEARCH FORM -->
-            <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-comments"></i>
-                        <span class="badge badge-danger navbar-badge">3</span>
-                    </a>
+
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
-                            <div class="media">
-                                <img src="{{ asset('img/user1-128x128.jpg') }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Brad Diesel
-                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">Call me whenever you can...</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
+
                             <!-- Message End -->
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{{ asset('img/user8-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        John Pierce
-                                        <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">I got your message bro</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
+
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
-                            <div class="media">
-                                <img src="{{ asset('img/user3-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">The subject goes here</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
+
                             <!-- Message End -->
                         </a>
                         <div class="dropdown-divider"></div>
@@ -170,20 +119,13 @@
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                {{-- <img src="{{ asset('img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
-                <span class="brand-text font-weight-light">Brick</span>
-            </a>
+
 
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image ">
-                        <img src="{{ asset('img/user2-160x160.jpg') }}" class="img-circle elevation-2 d-none" alt="User Image">
-                        <i class="far fa-user text-white"></i>
-                    </div>
+
                     <div class="info">
                         <a href="#" class="d-block"> {{ Auth::user()->name }}</a>
                     </div>
@@ -195,161 +137,126 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-header">MENÚ</li>
+
+                        <li class="nav-item">
+                            <a href="/admin/slider" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>SLIDER</p>
+                            </a>
+                        </li>
+
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
-                                <p>MOVIMIENTOS<i class="fas fa-angle-left right"></i></p>
+                                <p>SERVICIOS<i class="fas fa-angle-left right"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/admin/pedido" class="nav-link">
+                                    <a href="/admin/service" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>PEDIDOS</p>
+                                        <p>SECCIÓN</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/admin/produccion" class="nav-link">
+                                    <a href="/admin/service-content" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>PRODUCCIÓN</p>
+                                        <p>CONTENIDO</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <!--<li class="nav-item">
-                            <a href="admin/pedido" class="nav-link">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
-                                <p>PEDIDOS</p>
-                            </a>
-                        </li>-->
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
-                                <p>CATÁLOGOS<i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">9</span>
-                                </p>
+                                <p>GENEROS<i class="fas fa-angle-left right"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/admin/unidad" class="nav-link">
+                                    <a href="/admin/genre" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>UNIDAD DE MEDIDA</p>
+                                        <p>SECCIÓN</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/admin/marca" class="nav-link">
+                                    <a href="/admin/genre-content" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>MARCAS</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/admin/color" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>COLORES</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/admin/familia" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>FAMILIA</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/admin/modelo" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>MODELOS</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/admin/almacen" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>ALMACEN</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/admin/articulo" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>ARTÍCULOS</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/admin/cliente" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>CLIENTES</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/admin/proveedor" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>PROVEEDORES</p>
+                                        <p>CONTENIDO</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>INVENTARIOS<i class="right fas fa-angle-left"></i></p>
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>PAQUETES<i class="fas fa-angle-left right"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/admin/entrada" class="nav-link">
+                                    <a href="/admin/package" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>ENTRADAS</p>
+                                        <p>SECCIÓN</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/admin/salida" class="nav-link">
+                                    <a href="/admin/package-content" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>SALIDAS\REMISION</p>
+                                        <p>CONTENIDO</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tree"></i>
-                                <p>RECURSOS<i class="fas fa-angle-left right"></i></p>
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>EVENTOS<i class="fas fa-angle-left right"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/admin/puesto" class="nav-link">
+                                    <a href="/admin/event" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>PUESTO</p>
+                                        <p>SECCIÓN</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/admin/departamento" class="nav-link">
+                                    <a href="/admin/event-content" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>DEPARTAMENTOS</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/admin/empleado" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>EMPLEADOS</p>
+                                        <p>EVENTO</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
-                                <p>CONFIGURACIÓN<i class="fas fa-angle-left right"></i></p>
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>ACERCADE MI<i class="fas fa-angle-left right"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="/admin/about" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>USUARIOS</p>
+                                        <p>SECCIÓN</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="pages/forms/advanced.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>CERRAR SESSIÓN</p>
-                                    </a>
-                                </li>
+
                             </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>CONTACTO<i class="fas fa-angle-left right"></i></p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/admin/contact" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>SECCIÓN</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item text-center">
+                            <img class="img-fluid" src="/img/logo_sin_fondo.png" style="width:50%" alt="">
                         </li>
                     </ul>
                 </nav>
@@ -368,11 +275,11 @@
 
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.0.1
-            </div>
+            <strong>Copyright &copy;<script>
+                document.write(new Date().getFullYear());
+            </script> All rights reserved by <a href="https://xpertsystems.com.mx/"
+                target="_blank">Xpertsystems</a>
+
         </footer>
 
         <!-- Control Sidebar -->
@@ -428,6 +335,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('vendor_assets/admin_lte/js/demo.js') }}"></script>
     <script src="{{ asset('vendor_assets/sark-decimal/sark-decimal.js') }}"></script>
+    <script src="{{ asset('vendor_assets/bootstrap_datepicker/bootstrap-datepicker.js') }}"></script>
 
 
 
@@ -440,4 +348,4 @@
 
 </html>
 
-</html>
+

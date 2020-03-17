@@ -13,10 +13,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/', 'HomeController@index');
+
+Route::get('lang/{lang}', function ($lang) {
+    session(['lang' => $lang]);
+    return \Redirect::back();
+})->where([
+    'lang' => 'eng|es'
+]);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'admin\SliderController@index')->name('home');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'],   function () {
+    Route::resource('slider', 'admin\SliderController');
+
+    Route::resource('service', 'admin\ServiceController');
+    Route::resource('service-content', 'admin\ServiceContentController');
+
+    Route::resource('genre', 'admin\GenreController');
+    Route::resource('genre-content', 'admin\GenreContentController');
+
+    Route::resource('package', 'admin\PackageController');
+    Route::resource('package-content', 'admin\PackageContentController');
+
+    Route::resource('event', 'admin\EventController');
+    Route::resource('event-content', 'admin\EventContentController');
+
+    Route::resource('about', 'admin\AboutController');
+
+    Route::resource('contact', 'admin\ContactController');
+});

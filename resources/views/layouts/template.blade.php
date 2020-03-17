@@ -70,8 +70,8 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
-                                        <a href="#" id="loginBtn">ENG</a> /
-                                        <a href="#" id="loginBtn">ESP</a>
+                                        <a href="{{ url('lang', ['eng']) }}" class="{{ (get_lang() == 'eng')? 'text-warning' : ''  }}" id="loginBtn">EN  </a> /
+                                        <a href="{{ url('lang', ['es']) }}" class="{{ (get_lang() == 'es')? 'text-warning' : ''  }}" id="loginBtn">ES</a>
                                     </div>
 
 
@@ -87,7 +87,7 @@
     </header>
     <!-- ##### Header Area End ##### -->
 
-   @yield('content') 
+   @yield('content')
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">

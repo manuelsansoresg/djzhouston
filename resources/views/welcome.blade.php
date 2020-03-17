@@ -1,47 +1,37 @@
 @extends('layouts.template')
 
 @section('title', 'DJ Z HOUSTON')
-    
+
 @section('content')
 <!-- ##### Hero Area Start ##### -->
+<?php
+$title = traslate('title_');
+$subtitle = traslate('subtitle_');
+?>
+
 <section class="hero-area">
     <div class="hero-slides owl-carousel">
         <!-- Single Hero Slide -->
+        @foreach($sliders as $slider)
         <div class="single-hero-slide d-flex align-items-center justify-content-center">
             <!-- Slide Img -->
-            <div class="slide-img bg-img" style="background-image: url(img/slider/party-2173187_1920.jpg);"></div>
+            <div class="slide-img bg-img" style="background-image: url({{ $path_slider.$slider->picture }});"></div>
             <!-- Slide Content -->
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="hero-slides-content text-center">
-                            <h6 data-animation="fadeInUp" data-delay="100ms">SERVICIO DE DJ</h6>
-                            <h2 data-animation="fadeInUp" data-delay="300ms">EVENTOS</h2>
+
+                            <h6 data-animation="fadeInUp" data-delay="100ms">{{ $slider->$title }}</h6>
+                            <h2 data-animation="fadeInUp" data-delay="300ms">{{ $slider->$subtitle }}</h2>
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
 
-        <!-- Single Hero Slide -->
-        <div class="single-hero-slide d-flex align-items-center justify-content-center">
-            <!-- Slide Img -->
-            <div class="slide-img bg-img" style="background-image: url(img/slider/party-629241_1920.jpg);"></div>
-            <!-- Slide Content -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="hero-slides-content text-center">
-                            <h6 data-animation="fadeInUp" data-delay="100ms"></h6>
-                            <h2 data-animation="fadeInUp" data-delay="300ms"> ILUMINACIÓN </h2>
-                            <a data-animation="fadeInUp" data-delay="500ms" href="#"
-                                class="btn oneMusic-btn mt-50">Discover <i class="fa fa-angle-double-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 <!-- ##### Hero Area End ##### -->
@@ -53,15 +43,14 @@
             <div class="col-12">
                 <div class="section-heading style-2 mb-15">
 
-                    <h2>Música para todo tipo de eventos</h2>
+                    <h2>{{ $service->$title }}</h2>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-lg-9">
                 <div class="ablums-text text-center mb-70">
-                    <p>Contamos con equipos profesionales de iluminación , sonido , pantallas de video y muchas cosas
-                        más.</p>
+                    <p>{{ $service->$subtitle }}</p>
                 </div>
             </div>
         </div>
@@ -70,42 +59,17 @@
             <div class="col-12">
                 <div class="albums-slideshow owl-carousel">
                     <!-- Single Album -->
+                    @foreach($service_contents as $service_content)
                     <div class="single-album">
-                        <img src="img/servicios/equipo.jpg" alt="">
+                        <img src="{{ $path_services.$service_content->picture }}" alt="">
                         <div class="album-info">
                             <a href="#">
-                                <h5>EQUIPO PROFESIONAL</h5>
+                                <h5>{{ $service_content->$title }}</h5>
                             </a>
 
                         </div>
                     </div>
-                    <div class="single-album">
-                        <img src="img/servicios/boda.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>BODAS</h5>
-                            </a>
-
-                        </div>
-                    </div>
-                    <div class="single-album">
-                        <img src="img/servicios/cumpleanos.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>CUMPLEAÑOS</h5>
-                            </a>
-
-                        </div>
-                    </div>
-                    <div class="single-album">
-                        <img src="img/servicios/bautizo.jpg" alt="">
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>BAUTIZO</h5>
-                            </a>
-
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
             </div>
@@ -123,8 +87,8 @@
             <div class="col-12 col-md-12">
                 <div class="new-hits-area mb-100">
                     <div class="section-heading text-left mb-50 wow fadeInUp" data-wow-delay="50ms">
-                        <p>Escucha la variedad de generos que tenemos</p>
-                        <h2>GENEROS</h2>
+                        <p>{{ $genre->$title }}</p>
+                        <h2>{{ $genre->$subtitle }}</h2>
                     </div>
 
                     <!-- Single CUMBIA Item -->
@@ -238,8 +202,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="text-center style-2">
-                    <p>vive una experiencia inolvidable</p>
-                    <h2>Paquetes</h2>
+                    <p>{{ $package->$title }}</p>
+                    <h2>{{ $package->$subtitle }}</h2>
                 </div>
             </div>
         </div>
@@ -277,8 +241,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading style-2">
-                    <p>Conoce nuestros proximos eventos</p>
-                    <h2>Eventos</h2>
+                    <p>{{ $event->$title }}</p>
+                    <h2>{{ $event->$subtitle }}</h2>
                 </div>
             </div>
         </div>
@@ -644,5 +608,5 @@
     </div>
 </section>
 <!-- ##### Contact Area End ##### -->
-    
+
 @endsection
