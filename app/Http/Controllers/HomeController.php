@@ -83,6 +83,9 @@ class HomeController extends Controller
         $slug                              = traslate('slug_');
         $events                            = Event::where($slug, '!=', $title_slug)->orderBy('date', 'desc')->limit(20)->get();
         $event                             = Event::where($slug, $title_slug)->first();
+        if($event == null){
+            return redirect('events');
+        }
         $path_event                        = '/img/eventos/';
         $pictures                          = Event_picture::where('event_id', $event->id)->where('type', 1)->orderBy('id', 'desc')->get();
         $videos                            = Event_picture::where('event_id', $event->id)->where('type', 2)->orderBy('id', 'desc')->get();
@@ -131,6 +134,9 @@ class HomeController extends Controller
     {
         $slug                              = traslate('slug_');
         $blog                              = Blog::where($slug, $title_slug)->first();
+        if($blog == null){
+            return redirect('/blog');
+        }
         $blog_section                      = Section_blog::first();
         $path                              = '/img/blog/';
         $pictures                          = Blog_picture::where('blog_id', $blog->id)->where('type', 1)->orderBy('id', 'desc')->get();

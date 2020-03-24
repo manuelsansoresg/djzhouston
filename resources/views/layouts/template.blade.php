@@ -91,7 +91,7 @@ $menu = menuHeader();
 
                                 <ul>
                                     @foreach($menu as $row_menu)
-                                        @if($row_menu == 'INICIO' || $menu=='HOME')
+                                        @if($row_menu == 'INICIO' || $row_menu=='HOME')
                                             <li><a href="/">{{ $row_menu }}</a></li>
                                             @else
                                             <li><a href="/{{ Str::slug($row_menu) }}">{{ $row_menu }}</a></li>

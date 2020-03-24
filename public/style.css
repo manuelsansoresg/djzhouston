@@ -7,7 +7,7 @@
 @import url(css/owl.carousel.min.css);
 @import url(css/animate.css);
 @import url(css/magnific-popup.css);
-@import url(css/font-awesome.min.css);
+
 @import url(css/audioplayer.css);
 @import url(css/one-music-icon.css);
 @import url(css/app.css);
@@ -558,9 +558,9 @@ img {
     display: inline-block;
     width: 100%; }
     .single-hero-slide .hero-slides-content h6 {
-      font-size: 18px;
+      font-size: 25px;
       color: #fff;
-      letter-spacing: 20px;
+      letter-spacing: 10px;
       text-transform: uppercase;
       margin-bottom: 20px;
       display: block; }
@@ -570,13 +570,13 @@ img {
     .single-hero-slide .hero-slides-content h2 {
       position: relative;
       z-index: 1;
-      font-size: 60px;
+      font-size: 75px;
       color: #ffffff;
       margin-bottom: 0;
       font-weight: 400;
       display: block;
       text-transform: capitalize;
-      letter-spacing: 30px;
+      letter-spacing: 10px;
       overflow: hidden; }
       .single-hero-slide .hero-slides-content h2 span {
         position: absolute;
@@ -596,12 +596,12 @@ img {
           letter-spacing: 5px;
           font-size: 30px; } }
     .single-hero-slide .hero-slides-content .btn {
-      border: 1px solid #fff;
-      background-color: transparent;
-      color: #fff; }
+      border: 1px solid #EADD12;
+      background-color: #EADD12;
+      color: black; }
       .single-hero-slide .hero-slides-content .btn:hover, .single-hero-slide .hero-slides-content .btn:focus {
-        background-color: #fff;
-        color: #000000; }
+        background-color: yellow;
+        color: black; }
 
 @-webkit-keyframes textsonar {
   0% {
