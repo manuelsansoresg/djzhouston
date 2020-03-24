@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Event extends Model
 {
@@ -11,11 +12,15 @@ class Event extends Model
     public static function save_edit($request, $path,  $id = '')
     {
         if($id == ''){
-            $slider = new Event($request->except('_token'));
+            $slider           = new Event($request->except('_token'));
+            $slider->slug_es  = Str::slug($request->title_es);
+            $slider->slug_eng = Str::slug($request->title_eng);
             $slider->save();
         }else{
             $slider = Event::find($id);
             $slider->fill($request->except('_token'));
+            $slider->slug_es = Str::slug($request->title_es);
+            $slider->slug_eng = Str::slug($request->title_eng);
             $slider->update();
         }
 
@@ -23,7 +28,7 @@ class Event extends Model
             @unlink('.'.$path.'/'.$slider->picture);
             @unlink('.'.$path. '/thumb_'.$slider->picture);
             $image_cover = $request->file('picture');
-            $name_image = uploadImage($_FILES['picture'], $image_cover, '.'.$path, true);
+            $name_image = uploadImage($_FILES['picture'], $image_cover, '.'.$path, true, false,350 , 185 );
 
             $new_image = Event::find($slider->id);
             $new_image->picture = $name_image;

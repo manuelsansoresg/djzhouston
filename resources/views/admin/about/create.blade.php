@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">PAQUETES</div>
+                        <div class="card-header"> ACERCA DE MI    </div>
                         <div class="card-body">
                             {{ Form::open(['route' => 'about.store', 'files' => true,  'method' => 'POST',  'class' => 'needs-validation', 'novalidate']) }}
                             <div class="col-12 col-md-12">
@@ -168,7 +168,7 @@
 @endsection
 
 @section('js')
-<script src="{{asset('vendor/summernote/summernote.min.js')}}"></script>
+<script src="{{asset('vendor_assets/summernote/summernote.min.js')}}"></script>
 <script>
     $(document).ready(function() {
             $('.note').summernote(

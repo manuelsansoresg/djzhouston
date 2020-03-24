@@ -42,7 +42,7 @@
                                         <tbody>
                                             @foreach($query as $row)
                                                 <tr>
-                                                    <td><img src="{{ $path.'/thumb_'.$row->picture }}" alt=""></td>
+                                                    <td><img class="cover" src="{{ $path.'/thumb_'.$row->picture }}" alt=""></td>
                                                     <td>{{ $row->title_es }}</td>
                                                     <td>{{ $row->title_eng }}</td>
                                                     <td>

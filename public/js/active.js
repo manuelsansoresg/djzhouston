@@ -121,14 +121,34 @@
 
     // :: 5.0 Video Active Code
     if ($.fn.magnificPopup) {
-        $('.video--play--btn').magnificPopup({
+        /*$('.video--play--btn').magnificPopup({
             disableOn: 0,
             type: 'iframe',
             mainClass: 'mfp-fade',
             removalDelay: 160,
             preloader: true,
             fixedContentPos: false
+        });*/
+        $('.video--play--btn').magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+
+            fixedContentPos: false
         });
+
+        $('.image-popup-vertical-fit').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-img-mobile',
+            image: {
+                verticalFit: true
+            }
+
+        });
+
     }
 
     // :: 6.0 ScrollUp Active Code
@@ -205,7 +225,7 @@
     if (browserWindow.width() > 767) {
         new WOW().init();
     }
-    
+
     // :: 14.0 Gallery Menu Active Code
     $('.catagory-menu a').on('click', function () {
         $('.catagory-menu a').removeClass('active');

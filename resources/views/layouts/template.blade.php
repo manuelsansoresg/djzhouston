@@ -6,20 +6,49 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <?php
+    $sections    = get_sections();
+    $section_meta = $sections['meta'];
+    ?>
 
-    <!-- Title -->
     <title>@yield('title')</title>
+    <meta name="description" content="{{ $section_meta['description'] }}"/>
+
+    <meta name="keywords" content="{{  $section_meta['keyboard'] }}">
+    <meta name="description" content="{{ $section_meta['description'] }} ">
+
+
 
     <!-- Favicon -->
     <link rel="icon" href="/img/core-img/favicon.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/vendor_assets/fontawesome-free/css/all.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161458098-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161458098-1');
+    </script>
 
 </head>
 
 <body>
+<?php
+$menu = menuHeader();
+?>
+<div class="icon-bar">
+    <a href="https://www.facebook.com/karlozamora04/" target="_blank" class="" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/djzmixxlive/?hl=es-la" target="_blank" class="" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://soundcloud.com/karlos-zamora" target="_blank" class="" data-toggle="tooltip" data-placement="top" title="Sound Cloud"><i class="fab fa-soundcloud"></i></a>
+    <a href="https://www.youtube.com/channel/UCr7337Wez1nxVBfDfgpc45Q/videos" target="_blank" class="" data-toggle="tooltip" data-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a>
+
+</div>
+
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="lds-ellipsis">
@@ -59,11 +88,15 @@
 
                             <!-- Nav Start -->
                             <div class="classynav">
+
                                 <ul>
-                                    <li><a href="/">Inicio</a></li>
-                                    <li><a href="#">Albums</a></li>
-                                    <li><a href="#">Eventos</a></li>
-                                    <li><a href="#">Contacto</a></li>
+                                    @foreach($menu as $row_menu)
+                                        @if($row_menu == 'INICIO' || $menu=='HOME')
+                                            <li><a href="/">{{ $row_menu }}</a></li>
+                                            @else
+                                            <li><a href="/{{ Str::slug($row_menu) }}">{{ $row_menu }}</a></li>
+                                        @endif
+                                    @endforeach
                                 </ul>
 
                                 <!-- Login/Register & Cart Button -->
@@ -107,10 +140,14 @@
                 <div class="col-12 col-md-6">
                     <div class="footer-nav">
                         <ul>
-                            <li><a href="#">Inicio</a></li>
-                            <li><a href="#">Albums</a></li>
-                            <li><a href="#">Eventos</a></li>
-                            <li><a href="#">Contacto</a></li>
+                            @foreach($menu as $row_menu)
+                                @if($row_menu == 'INICIO' || $row_menu=='HOME')
+                                    <li><a href="/">{{ $row_menu }}</a></li>
+                                @else
+                                    <li><a href="/{{ Str::slug($row_menu) }}">{{ $row_menu }}</a></li>
+                                @endif
+                            @endforeach
+
                         </ul>
                     </div>
                 </div>
@@ -121,15 +158,18 @@
 
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="/js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
-    <script src="js/plugins/plugins.js"></script>
+    <script src="/js/plugins/plugins.js"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="/js/active.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/main.js"></script>
+
 </body>
 
 </html>

@@ -38,7 +38,7 @@
                                                 <th class="small font-weight-bold">TÍTULO ENG</th>
                                                 <th class="small font-weight-bold">SUBTÍTULO ES</th>
                                                 <th class="small font-weight-bold">SUBTÍTULO ENG</th>
-                                                <th></th>
+                                                <th style="width: 90px"></th>
                                             </tr>
                                         </thead>
                                         <tbody>

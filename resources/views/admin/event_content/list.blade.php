@@ -40,13 +40,13 @@
                                                 <th class="small font-weight-bold">DIRECCIÓN</th>
                                                 <th class="small font-weight-bold">CONTENIDO ES</th>
                                                 <th class="small font-weight-bold">CONTENIDO ENG</th>
-                                                <th style="width: 90px"></th>
+                                                <th style="width: 120px"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($query as $row)
                                                 <tr>
-                                                    <td><img src="{{ $path.'/thumb_'.$row->picture }}" alt=""></td>
+                                                    <td><img style="width: 145px" src="{{ $path.'/thumb_'.$row->picture }}" alt=""></td>
                                                     <td>{{ $row->title_es }}</td>
                                                     <td>{{ $row->title_eng }}</td>
                                                     <td>{{ $row->date }}</td>
@@ -55,7 +55,8 @@
                                                     <td>{!! $row->content_eng !!}</td>
                                                     <td>
                                                         {{ Form::open(['route' => ['event-content.destroy', $row->id ],'class' => 'form-inline', 'method' => 'DELETE' ])}}
-                                                        <a href="{{route('event-content.edit', $row->id)}}" class="btn btn-sm btn-primary">
+                                                        <a href="/admin/event-picture/{{  $row->id }}" class="btn btn-primary btn-sm"><i class="fas fa-images"></i></a>
+                                                        <a href="{{route('event-content.edit', $row->id)}}" class="btn btn-sm btn-primary ml-md-2">
                                                             <i class="far fa-edit"></i>
                                                         </a>
                                                         <button onclick="return confirm('¿Deseas eliminar el elemento?')" class="btn btn-sm btn-danger ml-md-2">

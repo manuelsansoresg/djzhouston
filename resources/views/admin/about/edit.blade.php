@@ -176,7 +176,7 @@
 @endsection
 
 @section('js')
-<script src="{{asset('vendor/summernote/summernote.min.js')}}"></script>
+<script src="{{asset('vendor_assets/summernote/summernote.min.js')}}"></script>
 <script>
     $(document).ready(function() {
             $('.note').summernote(

@@ -23,7 +23,7 @@ class Landing_picture extends Model
             @unlink('.'.$path.'/'.$slider->picture);
             @unlink('.'.$path. '/thumb_'.$slider->picture);
             $image_cover = $request->file('picture');
-            $name_image = uploadImage($_FILES['picture'], $image_cover, '.'.$path, true);
+            $name_image = uploadImage($_FILES['picture'], $image_cover, '.'.$path, true, false, 300,300);
 
             $new_image = Landing_picture::find($slider->id);
             $new_image->picture = $name_image;

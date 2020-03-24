@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Session;
 use Verot\Upload\Upload;
 
-function uploadImage($file, $image_cover, $path, $is_move = false, $pre = '', $is_corp = false, $width = 150, $height = 150)
+function uploadImage($file, $image_cover, $path, $is_move = false,  $is_corp = false, $width = 150, $height = 150)
 {
     @$handle           = new Upload($file);
 
@@ -42,6 +42,38 @@ function get_lang(){
 }
 
 function traslate($string){
-    $lang = (Session::get('lang') != '')? Session::get('lang') : 'es';;
+    $lang = (Session::get('lang') != '')? Session::get('lang') : 'es';
     return $string.$lang;
+}
+
+function menuHeader(){
+
+    $get_menu['menu_es'] = array('INICIO', 'EVENTOS', 'GALERÍA DE FOTOS', 'BLOG', 'CONTACTO');
+    $get_menu['menu_eng'] = array('HOME', 'EVENTS', 'GALLERY PICTURES', 'BLOG', 'CONTACT');
+
+    $menu = traslate('menu_');
+
+    return $get_menu[$menu];
+
+}
+
+function get_sections(){
+    $sections['section_es']['contact']  = array('info' => 'Información', 'name' => 'Nombre', 'email' => 'Correo', 'subject' => 'Asunto', 'message' => 'Mensaje');
+    $sections['section_eng']['contact'] = array('info' => 'Contact Info', 'name' => 'Name', 'email' => 'E-mail', 'subject' => 'Subject', 'message' => 'Message');
+
+    $sections['section_es']['btn']      = array('send' => 'Enviar', 'see_event' => 'Ver Evento' , 'see_blog' => 'Ver Blog', 'schedule' => 'AGENDAR UNA CITA DE TRABAJO', 'contact' => 'CONTACTE CON NUESTRO EQUIPO');
+    $sections['section_eng']['btn']     = array('send' => 'Send', 'see_event' => 'See Event' , 'see_blog' => 'See Blog', 'schedule' => 'SCHEDULE AN APOINMENT', 'contact' => 'CONTACT OUR TEAM');
+
+    $sections['section_es']['event']    = array('picture' => 'Album');
+    $sections['section_eng']['event']   = array('picture' => 'Album');
+
+    $sections['section_es']['thanks']    = array('title' => 'Gracias', 'content' => 'Muy pronto nos pondremos en contacto');
+    $sections['section_eng']['thanks']   = array('title' => 'Thank you!', 'content' => 'We’ll get in contact soon ');
+
+    $sections['section_es']['meta']    = array('description' => 'DJ Z houston en  Cypress,tx. servicios: bodas, graduaciones, sonido e iluminación, fiesta y más.  Entretenimiento en toda el área metropolitana de Houston.', 'keyboard' => 'DJ Z houston, luz y sonido, dj boda, dj bautizo, dj graduaciones');
+    $sections['section_eng']['meta']   = array('description' => 'DJ Z houston in  Cypress,tx.  services:  wedding, graduations,  sound and lighting, party  and more entertainment throughout the greater Houston area.!', 'keyboard' => 'DJ Z houston, dj sound and lighting, dj wedding, dj graduations');
+
+    $menu = traslate('section_');
+
+    return $sections[$menu];
 }

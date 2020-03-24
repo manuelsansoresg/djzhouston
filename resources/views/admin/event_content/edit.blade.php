@@ -26,7 +26,7 @@
                             <div class="row ">
                                 <div class="col-12 col-md-12">
                                     <div class="form-group mb-2">
-                                        <label class="small">IMÁGEN </label>
+                                        <label class="small">IMÁGEN  825px ancho × 437px alto </label>
                                         <div class="w-100"></div>
                                         <img src="{{ $path.'/thumb_'.$query->picture }}" alt="">
                                         <input type="file" name="picture" class="form-control form-control-sm">
@@ -156,9 +156,13 @@
 @endsection
 
 @section('js')
-<script src="{{asset('vendor/summernote/summernote.min.js')}}"></script>
+<script src="{{asset('vendor_assets/summernote/summernote.min.js')}}"></script>
 <script>
     $(document).ready(function() {
+        $('#datepicker').datepicker({
+            autoclose: true,
+            format: 'yyyy-mm-dd'
+        });
             $('.note').summernote(
                 {
                     height: 200,

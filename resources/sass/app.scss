@@ -1,5 +1,5 @@
 // Variables
-
+@import './components/social';
 
 .logodj{
     width: 20%;
@@ -49,4 +49,65 @@ hr.new1 {
     width: 100%;
     background-color: black;
     padding: 5px;
+}
+
+.img-package{
+    height: 30vh;
+    object-fit: cover;
+}
+
+.event-text-packate{
+    height: 42vh;
+}
+
+.event-place > p {
+    margin-bottom: 5px !important;
+    line-height: 1 !important;
+}
+
+.social-header{
+    position: absolute;
+    color: white;
+    z-index: 9;
+}
+
+.cover{
+    width: 100px;
+}
+
+.card > iframe{
+    width: 100%;
+    height: 335px;
+}
+
+.album-thumb > a >iframe{
+    width: 100%;
+    height: 257px;
+}
+
+.sound-cover{
+    height: 80vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.sound-content{
+    margin-top: 100px;
+}
+
+.single-hero-slide .hero-slides-content h6 {
+    letter-spacing: 10px;
+    font-size: 25px ;
+}
+.single-hero-slide .hero-slides-content h2 {
+    letter-spacing: 10px;
+    font-size: 80px;
+}
+
+@media (max-width: 576px) {
+    .sound-cover{
+        height: 50vh;
+    }
 }

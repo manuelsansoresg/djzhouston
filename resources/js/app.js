@@ -1,36 +1,39 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+const axios = require('axios');
 
-/*require('./bootstrap');
+if ( $("#type").length > 0 ) {
 
-window.Vue = require('vue');*/
+    $( "#type" ).change(function() {
+        let type = $('#type').val();
+        $('#video').val('');
+        $('#picture').val('');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+        if(type == 1){
+            $('#div-video').hide();
+            $('#div-image').show();
+        }else{
+            $('#div-video').show();
+            $('#div-image').hide();
+        }
+    });
+}
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+$( "#form-contact" ).submit(function( event ) {
 
-/*Vue.component('example-component', require('./components/ExampleComponent.vue').default);*/
+    event.preventDefault();
+    $('#spinner').show();
+    let myForm    = document.getElementById('form-contact');
+    let formData  = new FormData(myForm);
+    axios.post('/send-contact', formData)
+        .then(function (response) {
+            var result  = response.data;
+            $('#form-contact')[0].reset();
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+            $('#spinner').hide();
+            window.location = '/thanks';
 
-/*
-const app = new Vue({
-    el: '#app',
+        })
+        .catch(e => {
+            $('#spinner').hide();
+        })
+
 });
-*/
-
-

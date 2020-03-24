@@ -1,12 +1,18 @@
 @extends('layouts.template')
 
-@section('title', 'DJ Z HOUSTON')
+@section('title', 'DJ Z HOUSTON the best dj entertainment')
 
 @section('content')
 <!-- ##### Hero Area Start ##### -->
 <?php
-$title = traslate('title_');
-$subtitle = traslate('subtitle_');
+$title       = traslate('title_');
+$subtitle    = traslate('subtitle_');
+$content     = traslate('content_');
+
+$sections    = get_sections();
+$section_btn = $sections['btn'];
+$slug        = traslate('slug_');
+
 ?>
 
 <section class="hero-area">
@@ -24,7 +30,14 @@ $subtitle = traslate('subtitle_');
 
                             <h6 data-animation="fadeInUp" data-delay="100ms">{{ $slider->$title }}</h6>
                             <h2 data-animation="fadeInUp" data-delay="300ms">{{ $slider->$subtitle }}</h2>
-
+                            <a data-animation="fadeInUp" data-delay="500ms" href="tel:+8322290610" class="btn oneMusic-btn mt-50">
+                                {{ $section_btn['schedule'] }} 
+                                <i class="fa fa-angle-double-right"></i>
+                            </a>
+                            <a data-animation="fadeInUp" data-delay="500ms" href="/contact" class="btn oneMusic-btn mt-50">
+                                {{ $section_btn['contact'] }}
+                                <i class="fa fa-angle-double-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +74,7 @@ $subtitle = traslate('subtitle_');
                     <!-- Single Album -->
                     @foreach($service_contents as $service_content)
                     <div class="single-album">
-                        <img src="{{ $path_services.$service_content->picture }}" alt="">
+                        <img src="{{ $path_services.'thumb_'.$service_content->picture }}" alt="">
                         <div class="album-info">
                             <a href="#">
                                 <h5>{{ $service_content->$title }}</h5>
@@ -93,97 +106,27 @@ $subtitle = traslate('subtitle_');
 
                     <!-- Single CUMBIA Item -->
                     <div class="row">
+                        @foreach($genres as $genre)
                         <div class="col-12 col-md-3 pb-3">
-                            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                                data-wow-delay="100ms">
+                            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="100ms">
                                 <div class="first-part d-flex align-items-center">
                                     <div class="thumbnail">
-                                        <img src="img/genero/cumbias.jpg" alt="">
+                                        <img src="{{ $path_genre.'thumb_'.$genre->picture }}" alt="">
                                     </div>
                                     <div class="content-">
 
-                                        <p>CUMBIA</p>
+                                        <p>{{ $genre->$title }}</p>
                                     </div>
                                 </div>
                                 <audio preload="auto" controls>
-                                    <source src="audio/generos/cumbia.mp3">
+                                    <source src="{{ $path_genre.$genre->music }}">
                                 </audio>
                             </div>
                         </div>
+                        @endforeach
 
 
-                        <!-- Single  NORTEÑO SAX Item -->
-                        <div class="col-12 col-md-3 pb-3">
-                            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                                data-wow-delay="150ms">
-                                <div class="first-part d-flex align-items-center">
-                                    <div class="thumbnail">
-                                        <img src="img/genero/sax.jpg" alt="">
-                                    </div>
-                                    <div class="content-">
-                                        <p>NORTEÑO SAX</p>
 
-                                    </div>
-                                </div>
-                                <audio preload="auto" controls>
-                                    <source src="audio/generos/nortenosax.mp3">
-                                </audio>
-                            </div>
-                        </div>
-                        <!-- Single  NORTEÑO MONTERREY Item -->
-                        <div class="col-12 col-md-3 pb-3">
-                            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                                data-wow-delay="150ms">
-                                <div class="first-part d-flex align-items-center">
-                                    <div class="thumbnail">
-                                        <img src="img/genero/nortenio.jpg" alt="">
-                                    </div>
-                                    <div class="content-">
-                                        <p>NORTEÑO MONTERREY</p>
-
-                                    </div>
-                                </div>
-                                <audio preload="auto" controls>
-                                    <source src="audio/generos/nortenamonterrey.mp3">
-                                </audio>
-                            </div>
-                        </div>
-                        <!-- Single  NORTEÑO MONTERREY Item -->
-                        <div class="col-12 col-md-3 pb-3">
-                            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                                data-wow-delay="150ms">
-                                <div class="first-part d-flex align-items-center">
-                                    <div class="thumbnail">
-                                        <img src="img/genero/nortenio.jpg" alt="">
-                                    </div>
-                                    <div class="content-">
-                                        <p>NORTEÑO MONTERREY</p>
-
-                                    </div>
-                                </div>
-                                <audio preload="auto" controls>
-                                    <source src="audio/generos/nortenamonterrey.mp3">
-                                </audio>
-                            </div>
-                        </div>
-                        <!-- Single  NORTEÑO MONTERREY Item -->
-                        <div class="col-12 col-md-3 pb-3">
-                            <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
-                                data-wow-delay="150ms">
-                                <div class="first-part d-flex align-items-center">
-                                    <div class="thumbnail">
-                                        <img src="img/genero/nortenio.jpg" alt="">
-                                    </div>
-                                    <div class="content-">
-                                        <p>NORTEÑO MONTERREY</p>
-
-                                    </div>
-                                </div>
-                                <audio preload="auto" controls>
-                                    <source src="audio/generos/nortenamonterrey.mp3">
-                                </audio>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -210,24 +153,31 @@ $subtitle = traslate('subtitle_');
     </div>
     <div class="container">
         <div class="row mt-3">
-            <div class="col-md-4 paquetes" style="background: url('img/paquetes/1.jpg')">
-                <div class="paquetes__title text-center text-white">
-                    <p class="h3">PAQUETE 1</p>
-                </div>
-                <div class="paquetes__content font-bold">
+            @foreach($packages as $package)
+            <div class="col-12 col-md-4">
+                <div class="single-event-area mb-30">
+                    <div class="event-thumbnail">
+                        <img class="img-package" src="{{ $path_package.$package->picture }}" alt="">
+                    </div>
+                    <div class="event-text event-text-packate">
+                        <h4>{{ $package->$title }}</h4>
+                        <div class="event-meta-data">
+                            <div class="row">
+                                <div class="col-12 text-white">
+                                    <span class="event-place"> {!! $package->$content !!}</span>
+                                </div>
+                            </div>
+                        </div>
 
-                    <ul class="mt-3">
-                        <li>SETUP PARA 100 PERSONAS</li>
-                        <li>SPEAKERS 2</li>
-                        <li>SUBWOOFER 2</li>
-                        <li>ROBOTIC MOVING 2</li>
-                        <li>LIGHTS 2</li>
-                    </ul>
-                </div>
-                <div class="text-center card-footer2 text-warning bg-black">
-                    <span class="h1">$500</span>
+                    </div>
+                    <div class="event-text">
+                        <h4>${{ $package->price }}</h4>
+                    </div>
                 </div>
             </div>
+            @endforeach
+
+
         </div>
     </div>
 </section>
@@ -247,52 +197,23 @@ $subtitle = traslate('subtitle_');
             </div>
         </div>
         <div class="row">
-            <!-- evento -->
-            <div class="col-12 col-md-6 pb-3">
-                <div class="row">
-                    <div class="col-1">
-                        <span class="h3">20</span>
-                        <small>MARZO</small>
+            @foreach($events as $event)
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-event-area mb-30">
+                    <div class="event-thumbnail">
+                        <img src="{{ $path_event.'thumb_'.$event->picture }}" alt="">
                     </div>
-                    <div class="col-11">
-
-                        <h6><i class="fas fa-music"></i> CONCIERTO EN MTY</h6>
-                        <p class="text-muted py-0 my-0">vie., 20 de mar. – sáb., 21 de mar.</p>
-                        <p class="text-muted my-0 py-0">Entropía, Av Jose Diaz Bolio #107A, México Nte.</p>
-                        <p class="text-dark">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis obcaecati hic, tempore
-                            architecto unde modi nostrum voluptates corrupti accusamus vero?
-                        </p>
-                        <p class="text-right">
-                            <a href="">VER MÁS </a>
-                        </p>
+                    <div class="event-text">
+                        <h4>{{ $event->$title }}</h4>
+                        <div class="event-meta-data">
+                            <a href="#" class="event-place">{{ $event->address }}</a>
+                            <a href="#" class="event-date">{{ $event->date }}</a>
+                        </div>
+                        <a href="/event/{{ $event->$slug }}" class="btn see-more-btn">{{ $section_btn['see_event'] }}</a>
                     </div>
                 </div>
             </div>
-            <!-- evento -->
-            <!-- evento -->
-            <div class="col-12 col-md-6 pb-3">
-                <div class="row">
-                    <div class="col-1">
-                        <span class="h3">20</span>
-                        <small>MARZO</small>
-                    </div>
-                    <div class="col-11">
-
-                        <h6><i class="fas fa-music"></i> CONCIERTO EN MTY</h6>
-                        <p class="text-muted py-0 my-0">vie., 20 de mar. – sáb., 21 de mar.</p>
-                        <p class="text-muted my-0 py-0">Entropía, Av Jose Diaz Bolio #107A, México Nte.</p>
-                        <p class="text-dark">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis obcaecati hic, tempore
-                            architecto unde modi nostrum voluptates corrupti accusamus vero?
-                        </p>
-                        <p class="text-right">
-                            <a href="">VER MÁS </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- evento -->
+            @endforeach
         </div>
 
         <div class="row d-none">
@@ -515,36 +436,31 @@ $subtitle = traslate('subtitle_');
 <!-- ##### Buy Now Area End ##### -->
 
 <!-- ##### Featured Artist Area Start ##### -->
-<section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed"
-    style="background-image: url(img/about/about.jpg);">
+<section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url('img/about/about.jpg');">
     <div class="container">
         <div class="row align-items-end">
             <div class="col-12 col-md-5 col-lg-4">
                 <div class="featured-artist-thumb">
-                    <img src="img/me.jpg" alt="">
+                    <img src="/img/me.jpg" alt="">
                 </div>
             </div>
             <div class="col-12 col-md-7 col-lg-8">
                 <div class="featured-artist-content">
                     <!-- Section Heading -->
                     <div class="section-heading white text-left mb-30">
-                        <p>DJ Z HOUSTON</p>
-                        <h2>Acerca de mí</h2>
+                        <p>{{ $about->$title }}</p>
+                        <h2>{{ $about->$subtitle }}</h2>
                     </div>
                     <p>
-                        Disfruta de la mezcla de : Cumbia,norteña,Huapango,Banda, Tejano, Tierra Caliente
-                        Siempre brindando la mejor calidad en cada evento, equipo profesional, efecto de luces y mucho
-                        más.
-                        <br>
-                        Marca la diferencia y dale un toque distinto contratando alguno de nuestros paquetes
+                        {!! $about->$content !!}
 
                     </p>
                     <div class="song-play-area">
                         <div class="song-name">
-                            <p>01. Intro</p>
+
                         </div>
                         <audio preload="auto" controls>
-                            <source src="audio/about.mp3">
+                            <source src="{{ $path_about.$about->music }}">
                         </audio>
                     </div>
                 </div>
@@ -557,14 +473,13 @@ $subtitle = traslate('subtitle_');
 
 
 <!-- ##### Contact Area Start ##### -->
-<section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img"
-    style="background-image: url(img/contact/contact.jpg);">
+<section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url('img/about/about.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
-                    <p>¿PLANEAS YA TU PROXIMO EVENTO Y NO CUENTAS CON DJ? CONTACTA AL DJ 100% DE LA RAZZA</p>
-                    <h2>CONTACTO</h2>
+                    <p>{{ $contact->$title }}</p>
+                    <h2>{{ $contact->$subtitle }}</h2>
                 </div>
             </div>
         </div>
@@ -573,32 +488,35 @@ $subtitle = traslate('subtitle_');
             <div class="col-12">
                 <!-- Contact Form Area -->
                 <div class="contact-form-area">
-                    <form action="#" method="post">
+                    <form action="send-contact" id="form-contact" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group wow fadeInUp" data-wow-delay="100ms">
-                                    <input type="text" class="form-control" id="name" placeholder="Name">
+                                    <input type="text" class="form-control" name="name" id="name" required placeholder="Name">
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group wow fadeInUp" data-wow-delay="200ms">
-                                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                    <input type="email" class="form-control" name="email" id="email" required placeholder="E-mail">
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group wow fadeInUp" data-wow-delay="300ms">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group wow fadeInUp" data-wow-delay="400ms">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10"
-                                        placeholder="Message"></textarea>
+                                    <textarea name="message" class="form-control" id="message" required cols="30" rows="10" placeholder="Message"></textarea>
                                 </div>
                             </div>
+                            <div class="col-12 text-center" id="spinner" style="display: none">
+                                <i class="fas fa-spinner fa-spin fa-2x text-white"></i>
+                            </div>
+
                             <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
-                                <button class="btn oneMusic-btn mt-30" type="submit">Send <i
-                                        class="fa fa-angle-double-right"></i></button>
+                                <button class="btn oneMusic-btn mt-30" type="submit">{{ $section_btn['send'] }} <i class="fa fa-angle-double-right"></i></button>
                             </div>
                         </div>
                     </form>

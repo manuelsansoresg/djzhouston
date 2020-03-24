@@ -28,7 +28,7 @@
                                     <label class="small">IMÁGEN </label>
                                     <div class="w-100"></div>
                                     <img src="{{ $path.'/thumb_'.$query->picture }}" alt="">
-                                    <input type="file" name="picture" required class="form-control form-control-sm">
+                                    <input type="file" name="picture"  class="form-control form-control-sm">
                                     <div class="w-100"></div>
                                     <div class="invalid-feedback">
                                         El campo es obligatorio.
@@ -140,7 +140,7 @@
 @endsection
 
 @section('js')
-<script src="{{asset('vendor/summernote/summernote.min.js')}}"></script>
+<script src="{{asset('vendor_assets/summernote/summernote.min.js')}}"></script>
 <script>
     $(document).ready(function() {
             $('.note').summernote(

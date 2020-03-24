@@ -36,6 +36,9 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+
+
+
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -46,7 +49,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">SITIO</a>
+                    <a href="/" class="nav-link">VER SITIO</a>
                 </li>
 
             </ul>
@@ -228,7 +231,7 @@
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
-                                <p>ACERCADE MI<i class="fas fa-angle-left right"></i></p>
+                                <p>ACERCA DE MI<i class="fas fa-angle-left right"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
@@ -250,6 +253,48 @@
                                     <a href="/admin/contact" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>SECCIÓN</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>LUZ Y SONIDO<i class="fas fa-angle-left right"></i></p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/admin/sound-lighting" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>SECCIÓN</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/admin/sound-lighting-content" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>LUZ Y SONIDO</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>BLOG<i class="fas fa-angle-left right"></i></p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/admin/blog" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>SECCIÓN</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/admin/blog-content" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>BLOG</p>
                                     </a>
                                 </li>
 
