@@ -130,13 +130,11 @@
             fixedContentPos: false
         });*/
         $('.video--play--btn').magnificPopup({
-            disableOn: 700,
             type: 'iframe',
             mainClass: 'mfp-fade',
             removalDelay: 160,
             preloader: false,
-
-            fixedContentPos: false
+            fixedContentPos: true
         });
 
         $('.image-popup-vertical-fit').magnificPopup({

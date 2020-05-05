@@ -31,10 +31,10 @@ $slug        = traslate('slug_');
                             <h6 data-animation="fadeInUp" data-delay="100ms">{{ $slider->$title }}</h6>
                             <h2 data-animation="fadeInUp" data-delay="300ms">{{ $slider->$subtitle }}</h2>
                             <a data-animation="fadeInUp" data-delay="500ms" href="tel:+8322290610" class="btn oneMusic-btn mt-50">
-                                {{ $section_btn['schedule'] }} 
+                                {{ $section_btn['schedule'] }}
                                 <i class="fa fa-angle-double-right"></i>
                             </a>
-                            <a data-animation="fadeInUp" data-delay="500ms" href="/contact" class="btn oneMusic-btn mt-50">
+                            <a data-animation="fadeInUp" data-delay="500ms" href="/contact" class="btn oneMusic-btn mt-50 ml-md-5">
                                 {{ $section_btn['contact'] }}
                                 <i class="fa fa-angle-double-right"></i>
                             </a>
@@ -439,7 +439,7 @@ $slug        = traslate('slug_');
 <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url('img/about/about.jpg');">
     <div class="container">
         <div class="row align-items-end">
-            <div class="col-12 col-md-5 col-lg-4">
+            <div class="col-12 col-md-5 col-lg-4 my-auto">
                 <div class="featured-artist-thumb">
                     <img src="/img/me.jpg" alt="">
                 </div>
@@ -462,9 +462,13 @@ $slug        = traslate('slug_');
                         <audio preload="auto" controls>
                             <source src="{{ $path_about.$about->music }}">
                         </audio>
+                        <div class="w-100 py-3"></div>
+                        <iframe id="control-radio" src="//www.zeno.fm/player/dj-z-radio-net" frameborder="0" scrolling="no"></iframe>
+                       
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

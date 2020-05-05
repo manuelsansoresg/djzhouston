@@ -74,7 +74,7 @@
                                     <div class="form-group mb-2">
                                         <label class="small">PRECIO</label>
                                         <div class="w-100"></div>
-                                        <input type="number" step="0.01" name="price" class="form-control form-control-sm" required>
+                                        <input type="number" step="0.01" name="price" class="form-control form-control-sm">
                                         <div class="w-100"></div>
                                         <div class="invalid-feedback">
                                             El campo es obligatorio.

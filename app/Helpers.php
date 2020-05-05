@@ -61,7 +61,7 @@ function get_sections(){
     $sections['section_es']['contact']  = array('info' => 'Información', 'name' => 'Nombre', 'email' => 'Correo', 'subject' => 'Asunto', 'message' => 'Mensaje');
     $sections['section_eng']['contact'] = array('info' => 'Contact Info', 'name' => 'Name', 'email' => 'E-mail', 'subject' => 'Subject', 'message' => 'Message');
 
-    $sections['section_es']['btn']      = array('send' => 'Enviar', 'see_event' => 'Ver Evento' , 'see_blog' => 'Ver Blog', 'schedule' => 'AGENDAR UNA CITA DE TRABAJO', 'contact' => 'CONTACTE CON NUESTRO EQUIPO');
+    $sections['section_es']['btn']      = array('send' => 'Enviar', 'see_event' => 'Ver Evento' , 'see_blog' => 'Ver Blog', 'schedule' => 'SCHEDULE AN APOINMENT', 'contact' => 'CONTACT OUR TEAM');
     $sections['section_eng']['btn']     = array('send' => 'Send', 'see_event' => 'See Event' , 'see_blog' => 'See Blog', 'schedule' => 'SCHEDULE AN APOINMENT', 'contact' => 'CONTACT OUR TEAM');
 
     $sections['section_es']['event']    = array('picture' => 'Album');

@@ -30,6 +30,11 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+	
+	 public function showRegistrationForm()
+    {
+        return redirect('login');
+    }
 
     /**
      * Create a new controller instance.

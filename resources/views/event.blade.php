@@ -81,7 +81,7 @@ $section_event   = $sections['event'];
                    <div class="col-12 col-sm-6 col-md-3">
                        <div class="single-album-area">
                            <div class="album-thumb">
-                               <img src="{{ $path_event.'/thumb_'.$row->picture_video }}" alt="">
+                               <img src="{{ $path_event.'thumb_'.$row->picture_video }}" alt="">
 
                                <div class="play-icon">
                                    <a href="{{ $row->video }}" data-toggle="modal" data-target=".modal-video"  class="video--play--btn"><span class="icon-play-button"></span></a>

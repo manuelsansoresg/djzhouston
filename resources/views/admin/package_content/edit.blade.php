@@ -11,7 +11,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/home">INICIO</a></li>
-                        <li class="breadcrumb-item"> <a href="/admin/genre">GENEROS</a> </li>
+                        <li class="breadcrumb-item"> <a href="/admin/package-content">CONTENIDO PAQUETES</a> </li>
                         <li class="breadcrumb-item active"> NUEVO </li>
                     </ol>
                 </div><!-- /.col -->
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">GENEROS</div>
+                        <div class="card-header">CONTENIDO PAQUETES</div>
                         <div class="card-body">
                             {{ Form::open(['route' => ['package-content.update', $query->id], 'files' =>true, 'method' => 'PUT', 'class' => 'needs-validation', 'novalidate']) }}
 
@@ -76,7 +76,7 @@
                                     <div class="form-group mb-2">
                                         <label class="small">PRECIO</label>
                                         <div class="w-100"></div>
-                                        <input type="number" step="0.01" name="price" value="{{ $query->price }}" class="form-control form-control-sm" required>
+                                        <input type="number" step="0.01" name="price" value="{{ $query->price }}" class="form-control form-control-sm">
                                         <div class="w-100"></div>
                                         <div class="invalid-feedback">
                                             El campo es obligatorio.
