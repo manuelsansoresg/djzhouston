@@ -2133,6 +2133,11 @@ $("#form-contact").submit(function (event) {
     $('#spinner').hide();
   });
 });
+$(document).ready(function () {
+  if ($("#promo").length > 0) {
+    $('#modalPomotions').modal('show');
+  }
+});
 
 /***/ }),
 

@@ -37,3 +37,11 @@ $( "#form-contact" ).submit(function( event ) {
         })
 
 });
+
+$(document).ready(function () {
+    if ($("#promo").length > 0) {
+
+        $('#modalPomotions').modal('show');
+    }
+});
+

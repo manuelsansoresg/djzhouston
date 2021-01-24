@@ -14,10 +14,11 @@ $section_btn = $sections['btn'];
 $slug        = traslate('slug_');
 
 ?>
-
+<input type="hidden" id="path" value="{{  asset('css/app.css') }}">
 <section class="hero-area">
     <div class="hero-slides owl-carousel">
         <!-- Single Hero Slide -->
+
         @foreach($sliders as $slider)
         <div class="single-hero-slide d-flex align-items-center justify-content-center">
             <!-- Slide Img -->
@@ -38,6 +39,12 @@ $slug        = traslate('slug_');
                                 {{ $section_btn['contact'] }}
                                 <i class="fa fa-angle-double-right"></i>
                             </a>
+                            <div data-animation="fadeInUp" data-delay="100ms" class="mt-5">
+                                <p class="text-warning hero-description">{{ $slider->description }}</p>
+                            </div>
+                            <div class="w-100"></div>
+
+
                         </div>
                     </div>
                 </div>
@@ -52,6 +59,7 @@ $slug        = traslate('slug_');
 <!-- ##### Latest Albums Area Start ##### -->
 <section class="latest-albums-area section-padding-100">
     <div class="container">
+
         <div class="row">
             <div class="col-12">
                 <div class="section-heading style-2 mb-15">
@@ -463,8 +471,8 @@ $slug        = traslate('slug_');
                             <source src="{{ $path_about.$about->music }}">
                         </audio>
                         <div class="w-100 py-3"></div>
-                        <iframe id="control-radio" src="//www.zeno.fm/player/dj-z-radio-net" frameborder="0" scrolling="no"></iframe>
-                       
+
+
                     </div>
                 </div>
             </div>
@@ -530,5 +538,31 @@ $slug        = traslate('slug_');
     </div>
 </section>
 <!-- ##### Contact Area End ##### -->
+{{-- modal promocion --}}
+<?php $promo = getPromotion() ?>
+@if ($promo !== null)
+    <input type="hidden" id="promo">
+    <div class="modal fade" id="modalPomotions" tabindex="-1" aria-labelledby="modalPomotionsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPomotionsLabel"></h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="/img/promotion/{{ $promo->picture }}" alt="">
+                </div>
+                {{-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div> --}}
+    
+            </div>
+        </div>
+    </div>
+@endif
 
+{{-- modal promocion --}}
 @endsection

@@ -75,7 +75,7 @@
                                     <div class="form-group mb-2">
                                         <label class="small">SUBTITULO ESPAÑOL</label>
                                         <div class="w-100"></div>
-                                        <input type="text" name="subtitle_es" class="form-control form-control-sm" >
+                                        <input type="text" name="subtitle_es" class="form-control form-control-sm">
                                         <div class="w-100"></div>
                                         <div class="invalid-feedback">
                                             El campo es obligatorio.
@@ -91,13 +91,30 @@
                                     <div class="form-group mb-2">
                                         <label class="small">SUBTITULO INGLES</label>
                                         <div class="w-100"></div>
-                                        <input type="text" name="subtitle_eng" class="form-control form-control-sm" >
+                                        <input type="text" name="subtitle_eng" class="form-control form-control-sm">
                                         <div class="w-100"></div>
                                         <div class="invalid-feedback">
                                             El campo es obligatorio.
                                         </div>
                                         @if($errors)
                                         <span class="text-danger"> {{$errors->first('subtitle_eng')}}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group mb-2">
+                                        <label class="small">Descripción</label>
+                                        <div class="w-100"></div>
+                                        <input type="text" name="description" class="form-control form-control-sm">
+                                        <div class="w-100"></div>
+                                        <div class="invalid-feedback">
+                                            El campo es obligatorio.
+                                        </div>
+                                        @if($errors)
+                                        <span class="text-danger"> {{$errors->first('description')}}</span>
                                         @endif
                                     </div>
                                 </div>
@@ -118,5 +135,3 @@
     <!-- /.content-header -->
 </div>
 @endsection
-
-

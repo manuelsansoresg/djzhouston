@@ -101,6 +101,23 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group mb-2">
+                                        <label class="small">Descripción</label>
+                                        <div class="w-100"></div>
+                                        <input type="text" name="description" value="{{ $slider->description }}" class="form-control form-control-sm">
+                                        <div class="w-100"></div>
+                                        <div class="invalid-feedback">
+                                            El campo es obligatorio.
+                                        </div>
+                                        @if($errors)
+                                        <span class="text-danger h2"> {{$errors->first('description')}}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="row mt-3">
                                 <div class="col-12 text-right pb-4">
                                     <button class="btn btn-primary">ACEPTAR</button>
@@ -121,14 +138,11 @@
 <script src="{{asset('vendor_assets/summernote/summernote.min.js')}}"></script>
 <script>
     $(document).ready(function() {
-            $('.note').summernote(
-                {
-                    height: 200,
-                    fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Campton-Medium', 'Campton-Light' , 'Campton-Book', 'Campton-ExtraBold', 'Campton-SemiBoldItalic'],
-                    fontNamesIgnoreCheck: ["Campton-Medium", "Campton-Light", 'Campton-Book', 'Campton-ExtraBold', 'Campton-SemiBoldItalic']
-                }
-            );
+        $('.note').summernote({
+            height: 200,
+            fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Campton-Medium', 'Campton-Light', 'Campton-Book', 'Campton-ExtraBold', 'Campton-SemiBoldItalic'],
+            fontNamesIgnoreCheck: ["Campton-Medium", "Campton-Light", 'Campton-Book', 'Campton-ExtraBold', 'Campton-SemiBoldItalic']
         });
-
+    });
 </script>
 @endsection

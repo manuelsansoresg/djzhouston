@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slider_landing extends Model
 {
-    protected $fillable = ['title_es', 'title_eng', 'subtitle_es', 'subtitle_eng'];
+    protected $fillable = ['title_es', 'title_eng', 'subtitle_es', 'subtitle_eng', 'description'];
 
     public static function save_edit($request, $path, $id = '')
     {

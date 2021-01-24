@@ -142,6 +142,13 @@
                         <li class="nav-header">MENÚ</li>
 
                         <li class="nav-item">
+                            <a href="/admin/promotion" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>PROMOCIONES</p>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item">
                             <a href="/admin/slider" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>SLIDER</p>

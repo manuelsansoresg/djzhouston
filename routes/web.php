@@ -90,5 +90,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'],   function () {
     Route::resource('blog-picture', 'admin\BlogPictureController');
     Route::get('blog-picture/create/{event_id}', 'admin\BlogPictureController@create');
     Route::get('blog-picture/{id}/edit/{event_id}', 'admin\BlogPictureController@edit');
+    
+    Route::resource('promotion', 'admin\PromotionController');
 
 });

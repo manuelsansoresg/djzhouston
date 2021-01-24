@@ -9,6 +9,14 @@
     width: 25%;
 }
 
+.text-warning{
+    color: #E9DC12;
+}
+
+.hero-description{
+    font-size: 80px;
+}
+
 .paquetes{
     height: 70vh;
     width: 100%;
@@ -106,15 +114,69 @@ hr.new1 {
     font-size: 80px;
 }
 
+#modalPomotions{
+    .close{
+        opacity: 1 !important;
+    }
+    .modal-content{
+        background-color: transparent !important;
+        border: none !important;
+    }
+    .modal-header{
+        border: none !important;
+    }
+    .modal-footer{
+        border: none !important;
+    }
+}
+
 /* radio */
 #control-radio{
-    width: 100%;
-    height: 352px;
+    width: 50%;
+    height: 220px;
+    margin-top: 20px;
+    .dashboard-header{
+        background: none !important;
+    }
 }
 /* radio */
 
 @media (max-width: 576px) {
+
+    .hero-description{
+        font-size: 2rem;
+    }
+
+
+    #control-radio{
+        width: 100%;
+    }
     .sound-cover{
+         width: 50%;
         height: 50vh;
+    }
+
+    .hero-slides-content{
+        .mt-50 {
+            margin-top: 15px !important;
+        }
+    }
+
+    .hero-slides-content h6{
+        font-size: 1.3rem !important;
+    }
+    .hero-slides-content h2{
+        font-size: 1rem !important;
+    }
+    .hero-slides-content {
+        margin-top: 70%;
+    }
+
+    .single-hero-slide{
+        height: 130vh !important;
+    }
+
+    .oneMusic-btn {
+      min-width: 100% !important; 
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Promotion;
 use Illuminate\Support\Facades\Session;
 use Verot\Upload\Upload;
 
@@ -76,4 +77,8 @@ function get_sections(){
     $menu = traslate('section_');
 
     return $sections[$menu];
+}
+
+function getPromotion(){
+    return Promotion::where('created_at', '!=', null)->first();
 }
