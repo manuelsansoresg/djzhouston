@@ -526,7 +526,7 @@ $slug        = traslate('slug_');
                             <div class="col-12 text-center" id="spinner" style="display: none">
                                 <i class="fas fa-spinner fa-spin fa-2x text-white"></i>
                             </div>
-
+                            <input style="display:none" name="honey_pot" type="text" value="">
                             <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
                                 <button class="btn oneMusic-btn mt-30" type="submit">{{ $section_btn['send'] }} <i class="fa fa-angle-double-right"></i></button>
                             </div>
@@ -541,27 +541,27 @@ $slug        = traslate('slug_');
 {{-- modal promocion --}}
 <?php $promo = getPromotion() ?>
 @if ($promo !== null)
-    <input type="hidden" id="promo">
-    <div class="modal fade" id="modalPomotions" tabindex="-1" aria-labelledby="modalPomotionsLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalPomotionsLabel"></h5>
-                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="/img/promotion/{{ $promo->picture }}" alt="">
-                </div>
-                {{-- <div class="modal-footer">
+<input type="hidden" id="promo">
+<div class="modal fade" id="modalPomotions" tabindex="-1" aria-labelledby="modalPomotionsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalPomotionsLabel"></h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="/img/promotion/{{ $promo->picture }}" alt="">
+            </div>
+            {{-- <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     
                 </div> --}}
-    
-            </div>
+
         </div>
     </div>
+</div>
 @endif
 
 {{-- modal promocion --}}

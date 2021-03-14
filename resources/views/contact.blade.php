@@ -91,6 +91,7 @@ $section_btn     = $sections['btn'];
                             <div class="col-12 text-center" id="spinner" style="display: none">
                                 <i class="fas fa-spinner fa-spin fa-2x"></i>
                             </div>
+                            <input style="display:none" name="honey_pot" type="text" value="">
                             <div class="col-12 text-center">
                                 <button class="btn oneMusic-btn mt-30" type="submit">{{ $section_btn['send'] }} <i class="fa fa-angle-double-right"></i></button>
                             </div>
