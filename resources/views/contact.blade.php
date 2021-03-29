@@ -63,7 +63,7 @@ $section_btn     = $sections['btn'];
                 </div>
             </div>
 
-            <div class="col-12 col-lg-9">
+            <div class="col-12 col-lg-9 py-3">
                 <div class="contact-form-area">
                     <form action="send-contact" id="form-contact" method="post">
                         @csrf
@@ -91,7 +91,15 @@ $section_btn     = $sections['btn'];
                             <div class="col-12 text-center" id="spinner" style="display: none">
                                 <i class="fas fa-spinner fa-spin fa-2x"></i>
                             </div>
-                            <input style="display:none" name="honey_pot" type="text" value="">
+                            <input type="hidden" name="type_contact" value="2">
+                            <div class="g-recaptcha" data-sitekey="6LeTOJIaAAAAACaw3Q1yIN9T0nKhWMNNennZ-PNM"></div>
+                            <div class="col-12 text-center">
+
+                                @if( isset($error) && $error !== '')
+                                <div class="text-danger">{{ $error }}</div>
+                                @endif
+                            </div>
+
                             <div class="col-12 text-center">
                                 <button class="btn oneMusic-btn mt-30" type="submit">{{ $section_btn['send'] }} <i class="fa fa-angle-double-right"></i></button>
                             </div>

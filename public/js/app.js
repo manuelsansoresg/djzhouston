@@ -2118,21 +2118,28 @@ if ($("#type").length > 0) {
     }
   });
 }
+/* $( "#form-contact" ).submit(function( event ) {
 
-$("#form-contact").submit(function (event) {
-  event.preventDefault();
-  $('#spinner').show();
-  var myForm = document.getElementById('form-contact');
-  var formData = new FormData(myForm);
-  axios.post('/send-contact', formData).then(function (response) {
-    var result = response.data;
-    $('#form-contact')[0].reset();
-    $('#spinner').hide();
-    window.location = '/thanks';
-  })["catch"](function (e) {
-    $('#spinner').hide();
-  });
-});
+    event.preventDefault();
+    $('#spinner').show();
+    let myForm    = document.getElementById('form-contact');
+    let formData  = new FormData(myForm);
+    axios.post('/send-contact', formData)
+        .then(function (response) {
+            var result  = response.data;
+            $('#form-contact')[0].reset();
+
+            $('#spinner').hide();
+            window.location = '/thanks';
+
+        })
+        .catch(e => {
+            $('#spinner').hide();
+        })
+
+}); */
+
+
 $(document).ready(function () {
   if ($("#promo").length > 0) {
     $('#modalPomotions').modal('show');

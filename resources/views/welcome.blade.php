@@ -518,15 +518,26 @@ $slug        = traslate('slug_');
                                     <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                                 </div>
                             </div>
+                           
                             <div class="col-12">
                                 <div class="form-group wow fadeInUp" data-wow-delay="400ms">
                                     <textarea name="message" class="form-control" id="message" required cols="30" rows="10" placeholder="Message"></textarea>
+                                    <input type="hidden" name="honey_pot" type="text" value="">
                                 </div>
                             </div>
                             <div class="col-12 text-center" id="spinner" style="display: none">
                                 <i class="fas fa-spinner fa-spin fa-2x text-white"></i>
                             </div>
-                            <input style="display:none" name="honey_pot" type="text" value="">
+                         
+                            <div class="g-recaptcha" data-sitekey="6LeTOJIaAAAAACaw3Q1yIN9T0nKhWMNNennZ-PNM"></div>
+                            <input type="hidden" name="type_contact" value="1">
+
+                            <div class="col-12 text-center">
+                              
+                               @if( isset($error) &&  $error !== '')
+                                <div class="text-danger">{{ $error }}</div>
+                                @endif
+                            </div>
                             <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
                                 <button class="btn oneMusic-btn mt-30" type="submit">{{ $section_btn['send'] }} <i class="fa fa-angle-double-right"></i></button>
                             </div>

@@ -17,7 +17,7 @@ if ( $("#type").length > 0 ) {
     });
 }
 
-$( "#form-contact" ).submit(function( event ) {
+/* $( "#form-contact" ).submit(function( event ) {
 
     event.preventDefault();
     $('#spinner').show();
@@ -36,7 +36,7 @@ $( "#form-contact" ).submit(function( event ) {
             $('#spinner').hide();
         })
 
-});
+}); */
 
 $(document).ready(function () {
     if ($("#promo").length > 0) {

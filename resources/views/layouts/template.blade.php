@@ -39,6 +39,10 @@
 
         gtag('config', 'UA-161458098-1');
     </script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
+
+  
 
 </head>
 
